@@ -15,7 +15,6 @@ django-leaflet==0.29.0
 djangorestframework==3.14.0
 djangorestframework-gis==1.0
 fiona==1.9.5
-GDAL @ file:///C:/Users/LOUIS/Desktop/FINAL%20YEAR%20PROJECT%20WORK/Backend%20System/BackendAPI/GDAL-3.4.3-cp38-cp38-win_amd64.whl
 geojson==3.1.0
 geopandas==0.13.2
 gunicorn==21.2.0
