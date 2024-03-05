@@ -19,6 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # configuring GDAL path
 # GDAL_LIBRARY_PATH = r"env\Lib\site-packages\osgeo\gdal304.dll"
 # GEOS_LIBRARY_PATH = r"env\Lib\site-packages\osgeo\geos_c.dll"
+GDAL_LIBRARY_PATH = "/usr/lib/libgdal.so"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
