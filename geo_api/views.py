@@ -3,7 +3,6 @@ from django.contrib.gis.geos import GEOSGeometry
 import psycopg2
 from rest_framework.views import APIView
 from datetime import datetime, timedelta
-from osgeo import ogr
 
 # Create your views here.
 from rest_framework import generics
