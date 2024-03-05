@@ -56,13 +56,17 @@ INSTALLED_APPS = [
     "leaflet",
     "django.contrib.gis",
     "corsheaders",
-    # crispy forms
     "crispy_forms",
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_ALL_HEADERS = True
-CORS_ALLOWED_ORIGINS = ["http://localhost:8000"]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "127.0.0.1",
+    "powerline-monitoring-dashboard-ba1f4f6d707e.herokuapp.com",
+    "https://powerline-monitoring-dashboard-ba1f4f6d707e.herokuapp.com",
+]
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -116,11 +120,11 @@ WSGI_APPLICATION = "powerline_project.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "NAME": "powerlines_db",
-        "USER": "doadmin",
-        "PASSWORD": "AVNS_Ws12pHjdeXZ2mrdk9pw",
-        "HOST": "postgresql-powerlines-db-do-user-8776619-0.c.db.ondigitalocean.com",
-        "PORT": "25060",
+        "NAME": os.environ.get("DB_NAME"),
+        "USER": os.environ.get("DB_USER"),
+        "PASSWORD": os.environ.get("DB_PASS"),
+        "HOST": os.environ.get("DB_HOST"),
+        "PORT": os.environ.get("DB_PORT"),
     }
 }
 

@@ -103,14 +103,17 @@ map.on("draw:created", function (e) {
 function getAnalysisReadyData(geojson, model_name, analysis_type) {
   // Obtain the CSRF token from the Django template
   const csrfToken = document.querySelector("[name=csrfmiddlewaretoken]").value;
-  fetch("http://127.0.0.1:8000/api/v1/analyze-powerlines/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-CSRFToken": csrfToken, // Include the CSRF token in the headers
-    },
-    body: JSON.stringify({ geojson, model_name, analysis_type }), // or 'intersection', 'completely_within'
-  })
+  fetch(
+    "https://powerline-monitoring-dashboard-ba1f4f6d707e.herokuapp.com/api/v1/analyze-powerlines/",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": csrfToken, // Include the CSRF token in the headers
+      },
+      body: JSON.stringify({ geojson, model_name, analysis_type }), // or 'intersection', 'completely_within'
+    }
+  )
     .then((response) => response.json())
     .then((data) => {
       //console.log(data); // Data containing powerlines based on the analysis
