@@ -68,7 +68,6 @@ CORS_ALLOW_ALL_HEADERS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://127.0.0.1",
-    "https://powerline-monitoring-dashboard-ba1f4f6d707e.herokuapp.com/",
     "https://powerline-monitoring-dashboard-ba1f4f6d707e.herokuapp.com",
 ]
 
