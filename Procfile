@@ -1,1 +1,1 @@
-web: gunicorn powerline_project.wsgi -log-file -
+web: gunicorn powerline_project.wsgi --log-file -
