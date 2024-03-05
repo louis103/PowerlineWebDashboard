@@ -20,7 +20,6 @@ geopandas==0.13.2
 gunicorn==21.2.0
 importlib-metadata==7.0.1
 Markdown==3.5.2
-numpy==1.24.4
 packaging==23.2
 pandas==2.0.3
 psycopg2-binary==2.9.9
