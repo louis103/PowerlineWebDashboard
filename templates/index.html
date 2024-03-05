@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+{% load static %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<h5 class="text-center">Welcome {{ request.user.username }}!</h5>
+<hr>
+<!-- Add the responsive image container -->
+<div class="container-fluid position-relative">
+    <div class="row">
+        <div class="col">
+            <!-- Adjust the image source and alt text as needed -->
+            <img src="{% static 'media/bg.jpg' %}" alt="background image" class="img-fluid">
+            <p class="position-fixed top-50 start-50 translate-middle text-white h5">
+                This administrative dashboard is useful for visualizing and analysing powerlines and incidents.
+            </p>
+            <a href="/powerline/" class="btn btn-primary position-fixed top-60 start-50 translate-middle-x" style="margin-top: 10px;">Start exploring</a>
+        </div>
+    </div>
+</div>
+{% else %}
+<h5 class="text-center">Welcome!</h5>
+<div class="container-fluid position-relative">
+    <div class="row">
+        <div class="col">
+            <!-- Adjust the image source and alt text as needed -->
+            <img src="{% static 'media/bg.jpg' %}" alt="background image" class="img-fluid">
+            <p class="position-fixed top-50 start-50 translate-middle text-white h5">
+                This administrative dashboard is useful for visualizing and analysing powerlines and incidents.
+            </p>
+            <a href="/powerline/" class="btn btn-primary position-fixed top-60 start-50 translate-middle-x" style="margin-top: 10px;">Start exploring</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

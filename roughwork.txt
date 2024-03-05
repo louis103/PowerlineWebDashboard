@@ -1,0 +1,52 @@
+<!-- <a href="{% url 'report' %}" class="nav-item nav-link">Report</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'dashboard' %}" class="nav-item nav-link">Dashboard</a>
+            {% if user.is_superuser %}
+            <a href="{% url 'admin:index' %}" class="nav-item nav-link">Admin</a>
+            {% endif %}
+            <a href="{% url 'report' %}" class="nav-item nav-link">Report</a> -->
+
+
+            <!-- <p>{{ request.user.username }}</p>
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'login' %}">Login</a>
+<a href="{% url 'signup' %}">Signup</a> -->
+
+
+
+function completeTask(taskId) {
+    // Add logic to send a request to complete the task (change status to true)
+    fetch(`/api/v1/tasks/${taskId}/complete/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken'),  // Include CSRF token
+        },
+        body: JSON.stringify({}),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);  // Handle the response as needed
+        // Reload the page or update the UI accordingly
+        location.reload();
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// Function to get CSRF token from cookies
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+                        <!-- 'X-CSRFToken': getCookie('csrftoken'),  // Include CSRF token -->
