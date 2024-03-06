@@ -64,6 +64,7 @@ $.ajax({
                       <h5 id='center_h5' style='text-align: center;'>Powerline details</h5>
                       <hr />
                       <p id='val'> State of powerline: ${feature.properties.state}</p>
+                      <p id='val'> Structural type: ${feature.properties.structural_type}</p>
                       <p id='val'> Date recorded: ${feature.properties.datetime}</p>
                       <p id='val'>Latitude of powerline: ${feature.properties.latitude}</p>
                       <p id='val'>Longitude of powerline: ${feature.properties.longitude}</p>
