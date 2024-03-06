@@ -51,3 +51,4 @@ class PowerlineIncident(models.Model):
 
     def __str__(self):
         return f'"{self.incident_type}" incident located at ({self.latitude}, {self.longitude}'
+

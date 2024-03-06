@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # GDAL_LIBRARY_PATH = r"env\Lib\site-packages\osgeo\gdal304.dll"
 # GEOS_LIBRARY_PATH = r"env\Lib\site-packages\osgeo\geos_c.dll"
 
-# configure GDAL for heroku
+# configure GDAL for heroku in production
 GDAL_LIBRARY_PATH = os.environ.get("GDAL_LIBRARY_PATH")
 GEOS_LIBRARY_PATH = os.environ.get("GEOS_LIBRARY_PATH")
 
@@ -29,6 +29,7 @@ GEOS_LIBRARY_PATH = os.environ.get("GEOS_LIBRARY_PATH")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = "This_is_my_secret_key_but_it_is_unsecure"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -61,6 +62,7 @@ INSTALLED_APPS = [
     "django.contrib.gis",
     "corsheaders",
     "crispy_forms",
+    # "mapwidgets",
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -203,10 +205,10 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 LEAFLET_CONFIG = {
     # you can use your own
-    "DEFAULT_CENTER": (40.5, -0.09),
-    "DEFAULT_ZOOM": 1,
+    "DEFAULT_CENTER": (38.2084547, -1.846384),
+    "DEFAULT_ZOOM": 5,
     "MAX_ZOOM": 20,
-    "MIN_ZOOM": 3,
+    "MIN_ZOOM": 11,
     "SCALE": "both",
     "ATTRIBUTION_PREFIX": "My Custom Leaflet map",
 }
