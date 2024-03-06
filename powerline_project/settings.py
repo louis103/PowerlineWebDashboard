@@ -17,19 +17,18 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # configuring GDAL path
-# GDAL_LIBRARY_PATH = r"env\Lib\site-packages\osgeo\gdal304.dll"
-# GEOS_LIBRARY_PATH = r"env\Lib\site-packages\osgeo\geos_c.dll"
+GDAL_LIBRARY_PATH = r"env\Lib\site-packages\osgeo\gdal304.dll"
+GEOS_LIBRARY_PATH = r"env\Lib\site-packages\osgeo\geos_c.dll"
 
 # configure GDAL for heroku in production
-GDAL_LIBRARY_PATH = os.environ.get("GDAL_LIBRARY_PATH")
-GEOS_LIBRARY_PATH = os.environ.get("GEOS_LIBRARY_PATH")
+# GDAL_LIBRARY_PATH = os.environ.get("GDAL_LIBRARY_PATH")
+# GEOS_LIBRARY_PATH = os.environ.get("GEOS_LIBRARY_PATH")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
-# SECRET_KEY = "This_is_my_secret_key_but_it_is_unsecure"
+SECRET_KEY = "This_is_my_secret_key_but_it_is_unsecure"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -113,25 +112,14 @@ WSGI_APPLICATION = "powerline_project.wsgi.application"
 # DATABASES = {
 #     "default": {
 #         "ENGINE": "django.contrib.gis.db.backends.postgis",
-#         "NAME": "powerlines_db",
-#         "USER": "postgres",
-#         "PASSWORD": "1965",
-#         "HOST": "localhost",
-#         "PORT": "5435",
+#         "NAME": "",
+#         "USER": "",
+#         "PASSWORD": "",
+#         "HOST": "",
+#         "PORT": "",
 #     }
 # }
 
-# new database from Digital Ocean Cloud
-DATABASES = {
-    "default": {
-        "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "NAME": os.environ.get("DB_NAME"),
-        "USER": os.environ.get("DB_USER"),
-        "PASSWORD": os.environ.get("DB_PASS"),
-        "HOST": os.environ.get("DB_HOST"),
-        "PORT": os.environ.get("DB_PORT"),
-    }
-}
 
 # Configure your DRF settings in settings.py
 REST_FRAMEWORK = {
