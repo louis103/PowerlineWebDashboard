@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+/* Now you can use the Inter font-family in your CSS rules */
+body,
+html,
+* {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+#map {
+  height: 80vh;
+  position: absolute;
+  top: 50px;
+  width: 100vw;
+}
+
+#val {
+  font-size: 12px;
+}
+#center_h5 {
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Set a maximum height for the Leaflet popup */
+.leaflet-popup-content {
+  max-height: 250px; /* Adjust the height as needed */
+  overflow-y: auto; /* Add a scrollbar for overflow */
+  background-color: #333; /* Dark background color */
+  color: #fff; /* Light text color */
+}
+/* Style the close button */
+
+.leaflet-popup-tip {
+  background: #333; /* Dark background color for the close button */
+}
+
+.leaflet-popup-content-wrapper {
+  background: #333;
+}
+
+/* Style the scrollbar */
+.leaflet-popup-content::-webkit-scrollbar {
+  width: 2px; /* Set the width of the scrollbar */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+.leaflet-popup-content::-webkit-scrollbar-thumb {
+  background-color: #555; /* Color of the thumb */
+  border-radius: 4px; /* Make the thumb rounded */
+}
+
+/* Style the scrollbar track (the area the thumb moves along) */
+.leaflet-popup-content::-webkit-scrollbar-track {
+  background-color: #333; /* Color of the track */
+}

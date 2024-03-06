@@ -1,0 +1,38 @@
+<footer style="position: relative; bottom: 0; width: 100vw;">
+    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-0 px-4 px-xl-5 bg-dark">
+        <!-- Copyright -->
+        <div class="text-white mb-0 mb-md-0">
+            Copyright ©
+            <script>document.write(new Date().getFullYear())</script>
+            . All rights reserved.
+        </div>
+        <!-- Copyright -->
+        <div class="text-center text-white">
+            <p id="current-time"></p>
+            <script>
+      function displayTime() {
+        var currentTime = new Date();
+        document.getElementById("current-time").innerHTML = currentTime;
+      }
+
+      setInterval(displayTime, 1000);
+            </script>
+        </div>
+        <!-- Right -->
+        <!-- <div>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="#!" class="text-white">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div> -->
+        <!-- Right -->
+    </div>
+</footer>

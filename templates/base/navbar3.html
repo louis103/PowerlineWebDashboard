@@ -1,0 +1,47 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Powerline Dashboard</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+            class="offcanvas offcanvas-end bg-dark"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+        >
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
+                <button
+                    type="button"
+                    class="btn-close text-reset bg-light"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="offcanvas-body">
+                <a href="{% url 'home' %}" class="nav-item nav-link text-white">Dashboard</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'fetch-powerline' %}" class="nav-item nav-link text-white">View Powerlines</a>
+                {% if user.is_superuser %}
+                <a href="{% url 'admin:index' %}" class="nav-item nav-link text-white">Admin</a>
+                {% endif %}
+                <a href="{% url 'tasks' %}" class="nav-item nav-link text-white">Tasks</a>
+                <a href="{% url 'analysis' %}" class="nav-item nav-link text-white">Analysis</a>
+                <a href="{% url 'logout' %}" class="nav-item nav-link text-danger">Logout</a>
+                {% else %}
+                <!-- <div class="d-flex align-items-center"> -->
+                <a href="{% url 'login' %}" class="nav-item nav-link text-white">Login</a>
+                <a href="{% url 'signup' %}" class="nav-item nav-link text-white">Signup</a>
+                <!-- </div> -->
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
