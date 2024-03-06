@@ -28,9 +28,7 @@ class Powerline(models.Model):
         super(Powerline, self).save(*args, **kwargs)
 
     def __str__(self):
-        return (
-            f'A "{self.state}" Powerline located at ({self.latitude}, {self.longitude}'
-        )
+        return f'A "{self.state} {self.structural_type}" Powerline located at ({self.latitude}, {self.longitude})'
 
 
 # powerline incident model
@@ -50,5 +48,4 @@ class PowerlineIncident(models.Model):
         super(PowerlineIncident, self).save(*args, **kwargs)
 
     def __str__(self):
-        return f'"{self.incident_type}" incident located at ({self.latitude}, {self.longitude}'
-
+        return f'"{self.incident_type}" incident located at ({self.latitude}, {self.longitude})'
